@@ -15,7 +15,7 @@ function twoDigitCombinations () {
 // 2
 function uppercase (string, index) {
     let result = '';
-    if (typeof string !== 'string' || !string || !Number.isInteger(index) || index < 0 || index > string.length-1){
+    if (typeof string !== 'string' || !string || !Number.isInteger(index) || index < 0 || index > string.length-1) {
         return undefined;
     } else {
         for(let i = 0; i < string.length; i++) {
@@ -40,8 +40,8 @@ function filterRAnge (array, a, b) {
         b = sum-a;
     }
     let newArray = [];
-    for (let i = 0; i < array.length; i++){
-        if (array[i] >= a && array[i]<=b){
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] >= a && array[i]<=b) {
             newArray.push(array[i]);
         }
     }
@@ -104,7 +104,7 @@ function join (array, separator = ',') {
 }
 
 //slice
-function slice (array, start = 0, end = array.length){
+function slice (array, start = 0, end = array.length) {
     if(!Array.isArray(array)) {
         return undefined;
     }
