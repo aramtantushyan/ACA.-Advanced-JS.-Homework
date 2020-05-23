@@ -2,7 +2,7 @@
 function filterRAnge (array, a, b) {
     if (!Array.isArray(array)) {
         return undefined;
-    } else if (b < a) { //if b is smaller then a replace them by each other
+    } else if (b < a) {  //if b is smaller then then a replace them by each other
         let sum = a + b;
         a = b;
         b = sum-a;
