@@ -7,7 +7,7 @@ function find (collection, fn, startIndex = 0) {
     }
     return undefined;
 }
-//findIndex
+
 function isPositive(element){
     return element > 0;
 }
