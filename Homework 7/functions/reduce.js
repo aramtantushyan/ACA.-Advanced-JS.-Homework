@@ -1,5 +1,5 @@
 function reduce (array, callbackFn, initialValue) {
-    let i;
+    let index;
     let acc;
     let currentValue;
     if (initialValue === undefined && array.length === 0) {
@@ -10,14 +10,14 @@ function reduce (array, callbackFn, initialValue) {
         return initialValue;
     } else {
         if (initialValue === undefined) {
-            i = 1;
+            index = 1;
             acc = array[0]
         } else {
-            i = 0;
+            index = 0;
             acc = initialValue;
         }
     }
-    for ( ; i < array.length; i++) {
+    for (let i = index; i < array.length; i++) {
         currentValue = array[i];
         acc = callbackFn(acc, currentValue, i, array);
     }
