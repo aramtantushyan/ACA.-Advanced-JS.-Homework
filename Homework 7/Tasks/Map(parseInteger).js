@@ -1,10 +1,9 @@
 function parseInteger (array) {
-    return array.map((string, i, array) => {
-        let currentItem = array[i];
-        if(Number.isNaN(parseInt(currentItem))) {
+    return array.map((string, i, array) => 
+        if(Number.isNaN(parseInt(string)) {
             return null;
         } else {
-            return parseInt(currentItem);
+            return parseInt(string);
         }
     })
 }
