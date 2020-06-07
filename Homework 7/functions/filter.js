@@ -6,7 +6,7 @@ function filter (array, callbackFn) {
     // that "Elements which are appended to the array 
     // after the call to filter() begins will not be visited by callback"
         let currentItem = array[i];
-        if (array.hasOwnProperty(i) && callbackFn(currentItem, i, array)) {
+        if (callbackFn(currentItem, i, array)) {
             result.push(currentItem);
         }
     }
