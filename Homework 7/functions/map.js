@@ -2,9 +2,7 @@ function map (array, callbackFn) {
     let result = [];
     for (let i = 0; i < array.length; i++) {
         let currentItem = array[i];
-        if (array.hasOwnProperty(i)) {
             result.push(callbackFn(currentItem, i, array));
-        }
     }
     return result;
 }
