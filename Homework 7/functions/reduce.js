@@ -1,6 +1,6 @@
 function reduce (array, callbackFn = (acc, currentValue, i, array) => {}, initialValue) {
     if (initialValue === undefined && array.length === 0) {
-        throw new TypeError('Array is empty');
+        throw new TypeError('Some error');
     } else if (initialValue === undefined && array.length === 1) {
         return array[0];
     } else if (initialValue !== undefined && array.length === 0) {
