@@ -21,3 +21,6 @@ function reduce (array, callbackFn = (acc, currentValue, i, array) => {}, initia
     return acc;
 }
         
+function getSumOFAbsValues (acc, currentValue, i, array) {
+    return Math.abs(acc) + Math.abs(currentValue);
+}
