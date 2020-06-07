@@ -1,4 +1,7 @@
-function reduce (array, callbackFn = (acc, currentValue, i, array) => {}, initialValue) {
+function reduce (array, callbackFn, initialValue) {
+    let i;
+    let acc;
+    let currentValue;
     if (initialValue === undefined && array.length === 0) {
         throw new TypeError('Some error');
     } else if (initialValue === undefined && array.length === 1) {
