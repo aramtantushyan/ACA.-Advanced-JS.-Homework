@@ -12,7 +12,7 @@ Person.prototype.shout = function (text = 'hey') {
 
 function Student (name, surname, grade) {
     Person.call(this, name, surname);
-    this.Grade = grade;
+    this.grade = grade;
 }
 
 Student.prototype.getLikvid = function () {
