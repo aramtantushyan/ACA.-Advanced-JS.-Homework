@@ -20,5 +20,5 @@ Student.prototype.constructore = Student;
 
 Student.prototype.getLikvid = function () {
     console.log('Oops!');
-    return new Error('Please, start learnding!');
+    return new Error('Please, start learning!');
 }
