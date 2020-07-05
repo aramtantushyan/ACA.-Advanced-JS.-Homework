@@ -15,10 +15,10 @@ function Student (name, surname, grade) {
     this.Grade = grade;
 }
 
+Student.prototype = new Person ();
+Student.prototype.constructore = Student;
+
 Student.prototype.getLikvid = function () {
     console.log('Oops!');
     return new Error('Please, start learnding!');
 }
-
-Student.prototype = new Person ();
-Student.prototype.constructore = Student;
