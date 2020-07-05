@@ -1,0 +1,24 @@
+function Person (name, surname) {
+    this.name = name;
+    this.surname = surname;
+}
+
+Person.isHuman = true;
+
+Person.prototype.shout = function (text = 'hey') {
+    console.log(text);
+    return text;
+}
+
+function Student (name, surname, grade) {
+    Person.call(this, name, surname);
+    this.Grade = grade;
+}
+
+Student.prototype.getLikvid = function () {
+    console.log('Oops!');
+    return new Error('Please, start learnding!');
+}
+
+Student.prototype = new Person ();
+Student.prototype.constructore = Student;
