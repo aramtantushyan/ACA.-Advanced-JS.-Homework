@@ -105,7 +105,7 @@ header h1 {
     flex-flow: row wrap;
     align-items: stretch;
     justify-content: space-around;
-    margin: 15px;
+    margin: 20px;
 }
 
 .body-books-item {
@@ -115,17 +115,22 @@ header h1 {
     margin: 10px 10px 10px 10px;
     width: 30%;    
     box-shadow: 6px 5px 17px #bebbbb;
-    padding: 10px;
+    padding: 15px;
     border-radius: 4px;
-    
+    text-align: justify;
 }
 
 .body-books-item img {
     width: auto;
     max-width: 30%;
     height:auto;
+    transition: 300ms;
 }
 
+.body-books-item img:hover{
+    transform: scale(1.2);
+
+}
 
 
 
