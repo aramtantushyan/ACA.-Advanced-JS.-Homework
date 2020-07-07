@@ -1,3 +1,5 @@
+/* GENEREAL */
+
 * {
     box-sizing: border-box;
 }
@@ -16,6 +18,8 @@ body {
     margin: 0;
 
 }
+
+/* HEADER */
 
 header {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0.7)), to(rgba(22, 22, 22, 0.7))), url(img/bookclub_cover.jpg);
@@ -58,6 +62,7 @@ header {
 }
 
 .header-nav__list__item {
+    font-size: 16px;
     text-align: center;
     width: 100px;
     padding: 6px;
@@ -72,18 +77,56 @@ header {
     color: #ffffff
 }
 
-/*header-nav__list {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    list-style: none;
-}
-*/
-
 header h1 {
     margin-left: 20px;
     margin-top: 120px;
     color: #ffffff;
     font-size: 47px;
 }
+
+/* BODY */
+
+
+.body-main h2 {
+    align-content: center;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 35px;
+}
+
+.body-main-title {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 30px;
+}
+
+.body-books {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: space-around;
+    margin: 15px;
+}
+
+.body-books-item {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    margin: 10px 10px 10px 10px;
+    width: 30%;    
+    box-shadow: 6px 5px 17px #bebbbb;
+    padding: 10px;
+    border-radius: 4px;
+    
+}
+
+.body-books-item img {
+    width: auto;
+    max-width: 30%;
+    height:auto;
+}
+
+
+
+
 
