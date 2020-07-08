@@ -119,10 +119,10 @@ header h1 {
 .body-books {
     display: flex;
     flex-flow: row wrap;
-    align-items: stretch;
     justify-content: space-around;
     margin: 20px;
 }
+
 
 .body-books-item {
     display: flex;
@@ -134,6 +134,18 @@ header h1 {
     padding: 15px;
     border-radius: 4px;
     text-align: justify;
+}
+
+@media screen and (max-width: 1160px) {
+    .body-books-item {
+        width: 47%;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .body-books-item {
+        width: 80%;
+    }
 }
 
 .body-books-item img {
