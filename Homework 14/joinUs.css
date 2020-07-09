@@ -83,6 +83,35 @@ body {
 
 /* MAIN */
 
+.form,
+.main-form {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.form h2 {
+    text-align: center;
+    font-size: 35px;
+    margin: 10px;
+}
+
+.main-form {
+    width: 40%;
+    margin: 3% 30%;
+}
+
+#fname, #lname, #birthday, #country, #email, #phone, #submit {
+    margin-top: 5px;
+}
+
+#submit {
+    background-color: #353b48;
+    color: #ffffff;
+    height: 30px;
+    font-size: 18px;
+    
+}
 
 /* FOOTER */
 
@@ -120,6 +149,18 @@ body {
     justify-content: center;
     width: 33.3%;    
 }
+.footer-social-icons a:first-child{
+    justify-content: flex-end;
+}
+
+@media screen and (max-width: 900px) {
+    .footer-social-icons {
+        flex-flow: column;
+    }
+    .footer-social-icons a:last-child {
+        justify-content: flex-end;
+    }
+}
 
 .footer-social-icons a {
     width: 50%;
@@ -136,8 +177,4 @@ body {
     background-color: #ffffff;
     margin-right: 0;
     border-radius: 2px;
-}
-
-.footer-social-icons a:first-child{
-    justify-content: flex-end;
 }
