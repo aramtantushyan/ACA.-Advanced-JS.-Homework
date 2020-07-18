@@ -16,14 +16,18 @@ class Dictionary {
     }
 
     add (key, value) {
-        if(!myMap.has(key)) {
-            myMap.set(key, [value]);
+        if(!this.myMap.has(key)) {
+            this.myMap.set(key, [value]);
         }
-        myMap.set(key, [...myMap.get(key), value]);
+        this.myMap.set(key, [...this.myMap.get(key), value]);
     }
 
     remove (key) {
-        myMap.delete(key);
+        if (this.myMap.has(key)) {
+            this.myMap.delete(key);
+        }
+        if (this.myMap.get(key).includes())
+        newValue = this.myMap.get(key)
     }
 
     getCountByKey(key) {
