@@ -4,44 +4,54 @@ class Dictionary {
     }
     
     getByKey (key) {
-        if (!myMap.has(key)) {
+        let currentKeyValue = this.myMap.get(key);
+        if (!this.myMap.has(key)) {
             return undefined;
-        } else if (this.myMap.get(key).length = 0) {
+        } else if (currentKeyValue.length === 0) {
             return 'no value';
-        } else if (this.myMap.get(key).length = 1) {
-            return this.myMap.get(key)[0];
+        } else if (currentKeyValue.length === 1) {
+            return currentKeyValue[0];
         } else {
-            return this.myMap.get(key);
+            return currentKeyValue;
         }
     }
 
     add (key, value) {
         if(!this.myMap.has(key)) {
             this.myMap.set(key, [value]);
+        } else {
+            this.myMap.set(key, [...(this.myMap.get(key)), value]);
         }
-        this.myMap.set(key, [...this.myMap.get(key), value]);
+        return this;
     }
 
+
     remove (key) {
-        if (this.myMap.has(key)) {
+        if (this instanceof Dictionary) {
             this.myMap.delete(key);
         }
-        if (this.myMap.get(key).includes())
-        newValue = this.myMap.get(key)
     }
 
     getCountByKey(key) {
-        if (!myMap.has(key)) {
+        if (!this.myMap.has(key)) {
             return 0;
         }
-            return myMap.get(key).length;
+            return this.myMap.get(key).length;
     }
 
     keys() {
-        return myMap.keys();
+        let keys = [];
+        for (let key of this.myMap.keys()) {
+            keys.push(key);
+        }
+        return keys;
     }
 
     values() {
-        return myMap.values();
+        let values = [];
+        for (let value of this.myMap.values()) {
+            values.push(...value);
+        }
+        return values;
     }
 }
