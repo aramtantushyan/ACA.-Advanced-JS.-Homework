@@ -9,12 +9,15 @@ class Dictionary {
             return undefined;
         } else if (currentKeyValue.length === 0) {
             return 'no value';
-        } else if (currentKeyValue.length === 1) {
-            return currentKeyValue[0];
         } else {
-            return currentKeyValue;
+            return {value: currentKeyValue,
+                    remove (value) { 
+                        this.value.splice(this.value.indexOf(value), 1);
+                    }
+            };
         }
     }
+
 
     add (key, value) {
         if(!this.myMap.has(key)) {
@@ -25,11 +28,8 @@ class Dictionary {
         return this;
     }
 
-
     remove (key) {
-        if (this instanceof Dictionary) {
-            this.myMap.delete(key);
-        }
+        this.myMap.delete(key);
     }
 
     getCountByKey(key) {
