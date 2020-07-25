@@ -1,14 +1,18 @@
 .main-body {
     display: flex;
-    flex-direction: column;
-    text-align: center;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: baseline;
 }
 
 .main-body button {
     margin-top: 20px;
-    align-self: center;
 }
 
-.date {
-    display: none;
+.main-body time {
+    margin-left: 10px;
+}
+
+h1 {
+    text-align: center;
 }
