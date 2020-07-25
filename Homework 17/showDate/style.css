@@ -1,0 +1,14 @@
+.main-body {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.main-body button {
+    margin-top: 20px;
+    align-self: center;
+}
+
+.date {
+    display: none;
+}
