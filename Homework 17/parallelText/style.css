@@ -1,0 +1,16 @@
+h1 {
+    text-align: center;
+}
+.main-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#main-input1 {
+    width: 350px;
+}
+#main-input2 {
+    margin-top: 5px;
+    border: 0px;
+    width: 350px;
+}
