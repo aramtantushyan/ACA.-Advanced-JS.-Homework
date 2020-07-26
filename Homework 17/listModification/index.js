@@ -1,6 +1,8 @@
 let state = [];
 
+let schedule = document.querySelector('.schedule')
 let listItems = document.querySelectorAll('.schedule-item');
+
 (function initStateObj () {
     for (let i = 0; i < listItems.length; i++) {
         state.push({isFinished:false, id:i});
@@ -27,6 +29,4 @@ function isScheduleComplete (state) {
     alert("You have completed today's tasks");
 }
 
-
-let schedule = document.querySelector('.schedule')
 schedule.addEventListener('click', markAsDone)
