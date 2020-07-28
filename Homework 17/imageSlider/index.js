@@ -11,12 +11,10 @@ function slidePrevious () {
     imgList.append(imgList.firstElementChild);
 }
 
-
-nextBtn.addEventListener('click', slideNext);
-
-previousBtn.addEventListener('click', slidePrevious);
-
 (function periodicSlide () {
     slideNext();
-    setTimeout(periodicSlide, 5000);
+    setTimeout(periodicSlide, 6000);
 })();
+
+nextBtn.addEventListener('click', slideNext);
+previousBtn.addEventListener('click', slidePrevious);
