@@ -1,0 +1,23 @@
+.main-inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inputs input {
+    margin-left: 5px;
+}
+
+.applyBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+    width: 40px;
+}
+
+.applyBtn input {
+    color: #74589;
+    margin-top: 3px;
+    width: 60px;
+}
