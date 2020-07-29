@@ -29,7 +29,7 @@ function validateInputs (color1, color2) {
 
 function modifyColors () {
     if (validateInputs(textColor.value, backgroundColor.value)) {
-        Array.from(paragraphs).forEach((element) => {
+        paragraphs.forEach((element) => {
             element.style.color = textColor.value;
             element.style.backgroundColor = backgroundColor.value;
         })
@@ -41,6 +41,6 @@ function modifyColors () {
 let textColor = document.querySelector('.inputs').firstElementChild; 
 let backgroundColor = document.querySelector('.inputs').lastElementChild; 
 let apply = document.querySelector('.applyBtn').lastElementChild;
-let paragraphs = document.querySelector('.main-paragraphs').children;
+let paragraphs = Array.from(document.querySelector('.main-paragraphs').children);
 
 apply.addEventListener('click', modifyColors);
