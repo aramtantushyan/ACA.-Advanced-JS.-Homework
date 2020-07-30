@@ -7,44 +7,47 @@
     <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body>
-    <table class="students-info">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Average grade</th>
-            </tr>
-        </thead>
-        <tbody class="students-info__body">
-            <tr>
-                <td>Jack</td>
-                <td>26</td>
-                <td>18</td>
-            </tr>
-            <tr>
-                <td>Jane</td>
-                <td>18</td>
-                <td>18.5</td>
-            </tr>
-            <tr>
-                <td>David</td>
-                <td>22</td>
-                <td>19.75</td>
-            </tr>
-            <tr>
-                <td>Alice</td>
-                <td>17</td>
-                <td>19</td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr class="students-info__inputs">
-                <td><input type="text" name="name" id="name"></td>
-                <td><input type="text" name="age" id="age"></td>
-                <td><input type="text" name="grade" id="grade"></td>
-            </tr>
-        </tfoot>
-    </table>
+    <div class="main-body">
+        <h1>Students info</h1>
+        <table class="students-info">
+            <thead >
+                <tr class="students-info__head">
+                    <th>Name</th>
+                    <th>Age<input type="button" id='sortBtn' value="&#8593"></input></th>
+                    <th>Average grade</th>
+                </tr>
+            </thead>
+            <tbody class="students-info__body">
+                <tr>
+                    <td>Jack</td>
+                    <td>26</td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <td>Jane</td>
+                    <td>18</td>
+                    <td>18.5</td>
+                </tr>
+                <tr>
+                    <td>David</td>
+                    <td>22</td>
+                    <td>19.75</td>
+                </tr>
+                <tr>
+                    <td>Alice</td>
+                    <td>17</td>
+                    <td>19</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr class="students-info__inputs">
+                    <td><input type="text" name="name" id="name"></td>
+                    <td><input type="text" name="age" id="age"></td>
+                    <td><input type="text" name="grade" id="grade"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
 <script src="index.js"></script>
 </body>
 </html>

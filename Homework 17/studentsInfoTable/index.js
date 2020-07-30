@@ -3,6 +3,8 @@ const age = document.getElementById('age');
 const grade = document.getElementById('grade');
 const tableBody = document.querySelector('.students-info__body');
 const inputs = document.querySelector('.students-info__inputs')
+const sortBtn = document.getElementById('sortBtn');
+let arrows = ['&#8593', '&#8595', ''];
 
 function validateInputs (name, age, grade) {
     if(name.trim() !== '' && age.trim() !== '' && grade.trim() !== '') {
@@ -27,7 +29,8 @@ inputs.addEventListener('keydown', (e) => {
     } else {
         alert('Invalid inputs');
     }
-    
 })
+
+
 
 
