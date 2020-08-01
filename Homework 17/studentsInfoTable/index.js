@@ -67,7 +67,7 @@ function editBtnNameAndValue () {
     } else {
         arraysIndex++;
     }
-    sortBtn.value = String(sortBtnValues[arraysIndex]);
+    sortBtn.value = sortBtnValues[arraysIndex]; //after changing value html shows code instead of arrow? how to fix it? 
     sortBtn.name = sortBtnNames[arraysIndex];
 }
 
