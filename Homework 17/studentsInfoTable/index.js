@@ -41,26 +41,6 @@ function getMaxId () {
     return maxId;
 }
 
-inputs.addEventListener('keydown', (e) => {
-    if(e.code !== 'Enter') {
-        return;
-    } else if(validateInputs(name.value, age.value, grade.value)) {debugger
-        let newRow = `<tr><td>${name.value}</td><td>${age.value}</td><td>${grade.value}</td></tr>`
-        tableBody.insertAdjacentHTML('beforeend', `${newRow}`);
-
-        stateData.push({name: name.value, 
-        age: age.value,
-        grade: grade.value,
-        id: getMaxId() + 1});
-
-        initInputs();
-    } else {
-        alert('Invalid inputs');
-    }
-})
-
-initializeData();
-
 function editBtnNameAndValue () {
     if (arraysIndex === sortBtnValues.length-1) {
         arraysIndex = 0;
@@ -91,4 +71,24 @@ function render () {
     }
 }
 
-sortBtn.addEventListener('click', render)
+initializeData();
+
+sortBtn.addEventListener('click', render);
+
+inputs.addEventListener('keydown', (e) => {
+    if(e.code !== 'Enter') {
+        return;
+    } else if(validateInputs(name.value, age.value, grade.value)) {debugger
+        let newRow = `<tr><td>${name.value}</td><td>${age.value}</td><td>${grade.value}</td></tr>`
+        tableBody.insertAdjacentHTML('beforeend', `${newRow}`);
+
+        stateData.push({name: name.value, 
+        age: age.value,
+        grade: grade.value,
+        id: getMaxId() + 1});
+
+        initInputs();
+    } else {
+        alert('Invalid inputs');
+    }
+});
