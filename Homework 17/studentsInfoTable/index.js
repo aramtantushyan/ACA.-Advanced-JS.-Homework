@@ -4,7 +4,20 @@ const grade = document.getElementById('grade');
 const tableBody = document.querySelector('.students-info__body');
 const inputs = document.querySelector('.students-info__inputs')
 const sortBtn = document.getElementById('sortBtn');
+const names = document.getElementsByClassName('name-item');
+const ages = document.getElementsByClassName('age-item');
+const grades = document.getElementsByClassName('grade-item');
 let arrows = ['&#8593', '&#8595', ''];
+const initialData = [];
+
+function initializeData () { 
+    for (i = 0; i < tableBody.childElementCount; i++) {
+        initialData.push({name: names[i].textContent, 
+                          age: ages[i].textContent,
+                          grade: grades[i].textContent,
+                          id: i});
+    }
+}
 
 function validateInputs (name, age, grade) {
     if(name.trim() !== '' && age.trim() !== '' && grade.trim() !== '') {
@@ -31,6 +44,7 @@ inputs.addEventListener('keydown', (e) => {
     }
 })
 
+initializeData();
 
 
 
