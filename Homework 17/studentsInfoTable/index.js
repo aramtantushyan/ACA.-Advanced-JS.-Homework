@@ -7,15 +7,17 @@ const sortBtn = document.getElementById('sortBtn');
 const names = document.getElementsByClassName('name-item');
 const ages = document.getElementsByClassName('age-item');
 const grades = document.getElementsByClassName('grade-item');
-let arrows = ['&#8593', '&#8595', ''];
-const initialData = [];
+let arrows = ['', '&#8593', '&#8595'];
+const sortBtnNames = ['Default', 'Ascending', 'Descending'];
+let arraysIndex = 0;
+const stateData = [];
 
 function initializeData () { 
     for (i = 0; i < tableBody.childElementCount; i++) {
-        initialData.push({name: names[i].textContent, 
-                          age: ages[i].textContent,
-                          grade: grades[i].textContent,
-                          id: i});
+        stateData.push({name: names[i].textContent, 
+        age: ages[i].textContent,
+        grade: grades[i].textContent,
+        id: i});
     }
 }
 
@@ -32,6 +34,13 @@ function initInputs () {
     grade.value = '';
 }
 
+function getMaxId {
+    let idArray = [];
+    stateData.forEach((element) => idArray.push(element.id));
+    let maxId = Math.max(...idArray);
+    return maxId;
+}
+
 inputs.addEventListener('keydown', (e) => {
     if(e.code !== 'Enter') {
         return;
@@ -39,6 +48,10 @@ inputs.addEventListener('keydown', (e) => {
         let newRow = `<tr><td>${name.value}</td><td>${age.value}</td><td>${grade.value}</td></tr>`
         tableBody.insertAdjacentHTML('beforeend', `${newRow}`);
         initInputs();
+        stateData.push({name: name.value, 
+            age: age.value,
+            grade: grade.value,
+            id: getMaxId()};
     } else {
         alert('Invalid inputs');
     }
@@ -46,5 +59,34 @@ inputs.addEventListener('keydown', (e) => {
 
 initializeData();
 
+function editBtnNameAndValue () {
+    if (arraysIndex === arrows.length-1) {
+        arraysIndex = 0;
+    } else {
+        arraysIndex++;
+    }
+    sortBtn.value = arrows[arraysIndex];
+    sortBtn.name = sortBtnNames[arraysIndex];
+}
 
+function render () {
+    editBtnNameAndValue();
+    stateData.sort(function arraySorting (a, b) {
+        switch (sortBtn.name) {
+            case 'Default':
+                return a.id - b.id;
+            case 'Ascending':
+                return a.age - b.age;
+            case 'Descending':
+                return b.age - a.age;
+        }
+    });
 
+    for(i = 0; i < tableBody.childElementCount; i++) {
+        tableBody.children[i].innerHTML = `<td class="name-item">${stateData[i].name}</td>
+                                           <td class="age-item">${stateData[i].age}</td>
+                                           <td class="grade-item">${stateData[i].grade}</td>`;
+    }
+}
+
+sortBtn.addEventListener('click', render)
