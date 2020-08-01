@@ -7,7 +7,7 @@ const sortBtn = document.getElementById('sortBtn');
 const names = document.getElementsByClassName('name-item');
 const ages = document.getElementsByClassName('age-item');
 const grades = document.getElementsByClassName('grade-item');
-let arrows = ['', '&#8593', '&#8595'];
+let sortBtnValues = ["&#8645", "&#8593", "&#8595"];
 const sortBtnNames = ['Default', 'Ascending', 'Descending'];
 let arraysIndex = 0;
 const stateData = [];
@@ -34,7 +34,7 @@ function initInputs () {
     grade.value = '';
 }
 
-function getMaxId {
+function getMaxId () {
     let idArray = [];
     stateData.forEach((element) => idArray.push(element.id));
     let maxId = Math.max(...idArray);
@@ -44,14 +44,16 @@ function getMaxId {
 inputs.addEventListener('keydown', (e) => {
     if(e.code !== 'Enter') {
         return;
-    } else if(validateInputs(name.value, age.value, grade.value)) {
+    } else if(validateInputs(name.value, age.value, grade.value)) {debugger
         let newRow = `<tr><td>${name.value}</td><td>${age.value}</td><td>${grade.value}</td></tr>`
         tableBody.insertAdjacentHTML('beforeend', `${newRow}`);
-        initInputs();
+
         stateData.push({name: name.value, 
-            age: age.value,
-            grade: grade.value,
-            id: getMaxId()};
+        age: age.value,
+        grade: grade.value,
+        id: getMaxId() + 1});
+
+        initInputs();
     } else {
         alert('Invalid inputs');
     }
@@ -60,12 +62,12 @@ inputs.addEventListener('keydown', (e) => {
 initializeData();
 
 function editBtnNameAndValue () {
-    if (arraysIndex === arrows.length-1) {
+    if (arraysIndex === sortBtnValues.length-1) {
         arraysIndex = 0;
     } else {
         arraysIndex++;
     }
-    sortBtn.value = arrows[arraysIndex];
+    sortBtn.value = String(sortBtnValues[arraysIndex]);
     sortBtn.name = sortBtnNames[arraysIndex];
 }
 
