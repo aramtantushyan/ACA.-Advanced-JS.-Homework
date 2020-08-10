@@ -1,0 +1,13 @@
+.body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: beige;    
+}
