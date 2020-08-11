@@ -1,0 +1,35 @@
+html {
+    background-image: url(img/bg_img.jpg);
+}
+.main-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.main-body__selector {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.main-body__selector select {
+    height: 30px;
+    color: rgb(48, 63, 33);
+}
+
+.main-body__selector label {
+    font-size: 18px;
+    text-align: center;
+    color: rgb(48, 63, 33);
+}
+
+.main-body__dog_img {
+    margin-top: 2%;
+    width:40%;
+    height: 45%;
+    border: solid 1px rgb(48, 63, 33);
+    border-radius: 3px;
+}
