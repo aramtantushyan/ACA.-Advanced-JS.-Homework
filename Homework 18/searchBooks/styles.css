@@ -7,14 +7,17 @@ html {
     background-size: cover;
     font-family: 'Dancing Script', cursive;
     height: 100%;
+    margin: 0;
 }
 
 body {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100%;
     color: #ffffff;
+    margin: 0;
 }
 
 h1 {
@@ -70,4 +73,13 @@ h1 {
 
 .main-body:hover {
     box-shadow: 2px 2px 2px rgb(77, 75, 75);
+}
+
+.main-footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding: 0 0 10px 0;
+    text-align: center;
+
 }
