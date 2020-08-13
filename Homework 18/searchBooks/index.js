@@ -11,14 +11,18 @@ function normalizeInput (input) {
 }
 
 function redirectToNewPage () {
-    localStorage.setItem('searchValue', `${normalizeInput(search.value)}`);
-    self.location = './searchResults/searchResults.html';
+    if(normalizeInput(search.value)) {
+        localStorage.setItem('searchValue', `${normalizeInput(search.value)}`);
+        self.location = './searchResults/searchResults.html';
+    } else {
+        return;
+    }   
 }
 
 searchBtn.addEventListener('click', redirectToNewPage);
-searchBtn.addEventListener('keydown', (e) => {
+search.addEventListener('keydown', (e) => {
     if(e.code !== 'Enter') {
         return;
     }
-    redirectToNewPage(search.value)
+    redirectToNewPage(search.value);
 });
