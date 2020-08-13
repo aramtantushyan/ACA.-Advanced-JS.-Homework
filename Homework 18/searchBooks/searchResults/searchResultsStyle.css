@@ -36,6 +36,12 @@ html {
     border-top: solid 1px #ffffff;
 }
 
+.main-footer__positioning {
+    position: fixed;
+    bottom: 0;
+    width:100%;
+}
+
 .pagination {
     width: 100%;
     position: relative;
@@ -46,7 +52,7 @@ html {
 
 .pagination a {
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
     padding: 2px;
     color: black;
     text-decoration: none;
@@ -55,10 +61,6 @@ html {
 
 .hide {
     display:none;
-}
-
-.pagination a.active {
-    color: white;
 }
 
 .pagination a:hover:not(.active) {background-color: #ddd;}

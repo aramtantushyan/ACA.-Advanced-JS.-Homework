@@ -1,19 +1,18 @@
-import {doGet} from "/Homework 18/requestHelper/request.helper.js"
+import {doGet} from "../../requestHelper/request.helper.js"
 
 const searchResNumStr = document.querySelector('.resNum');
 const searchResults = document.querySelector('.searchResults');
 const pagination = document.querySelector('.pagination');
-const paginationEnd = document.getElementById('paginationEnd');
 const book = localStorage.getItem('searchValue');
+const mainFooter = document.querySelector('.main-footer');
 
 function createPagination (number) {
     let pagesNum = Math.ceil(number / 100);
     for (let i = 1; i <= pagesNum; i++) {
-        paginationEnd.insertAdjacentHTML('beforebegin', `<a id=${i}>${i}</a>`);
+        pagination.insertAdjacentHTML('beforeend', `<a id=${i}>${i}</a>`);
     }
 }
 
-// doGet(``)http://openlibrary.org/search.json?q=${book}&page=${i}
 function showResults (array) {
     array.forEach(element => {
         searchResults.insertAdjacentHTML('beforeend', `<div class='search-item'>
@@ -25,24 +24,38 @@ function showResults (array) {
     });
 }
 
+function changePage (pageN) {
+    searchResults.innerHTML = '';
+    doGet(`http://openlibrary.org/search.json?q=${book}&page=${pageN}`)
+    .then(res => showResults(res.docs))
+    .catch((err) => {searchResNumStr.textContent = `Ooops something went wrong`;
+                     pagination.classList.add('hide');
+                     mainFooter.classList.add('main-footer__positioning');
+                     console.log(err);
+                    });
+}
+
 (function getResults () {
     doGet(`http://openlibrary.org/search.json?q=${book}`)
     .then((res) => {
     let resultsNum = res.numFound;
-    searchResNumStr.textContent = `${resultsNum} results match your search`;
         if(resultsNum <= 0) {
-            searchResults.classList.add('hide');
+            searchResNumStr.textContent = `0 results match your search`;
             pagination.classList.add('hide');
+            mainFooter.classList.add('main-footer__positioning');
         } else {
-            searchResults.classList.remove('hide');
+            searchResNumStr.textContent = `${resultsNum} results match your search`;
             pagination.classList.remove('hide');
+            mainFooter.classList.remove('main-footer__positioning');
             createPagination(resultsNum);
             showResults(res.docs);
         }
     })
-    .catch((err) => {searchResNumStr.textContent = `Ooops something went wrong`; 
-                     searchResults.classList.add('hide');
+    .catch((err) => {searchResNumStr.textContent = `Ooops something went wrong`;
                      pagination.classList.add('hide');
+                     mainFooter.classList.add('main-footer__positioning');
                      console.log(err);
                     });
 })(); 
+
+pagination.addEventListener('click', (e) => changePage(e.target.id));
