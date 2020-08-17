@@ -26,7 +26,7 @@
      try {
         let response = await fetch (url);
         let resText = await response.text();
-        console.log(resText.value);
+        console.log(resText);
      } catch (error) {
         console.log('fetch failed', error)
      }
