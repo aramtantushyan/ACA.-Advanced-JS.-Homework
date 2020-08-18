@@ -1,0 +1,46 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.75)), url(./src/img/bg_img.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.main-body {
+    border:none;
+    border-radius: 5px;
+    padding: 30px;
+    background-color: #454545cc;
+    width: 17%;
+    height: 20%;
+
+}
+
+.main-body__login {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-body__login label {
+    margin-bottom: 3px;
+    color: #ffffff;
+}
+
+.main-body__login input {
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    margin-bottom: 20px;
+    height: 25px;
+}
