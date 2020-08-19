@@ -21,15 +21,23 @@ body {
     border:none;
     border-radius: 5px;
     padding: 30px;
-    background-color: #454545cc;
-    width: 17%;
-    height: 20%;
+    background-color: #454545dc;
+    width: 270px;
+    height: auto;
+}
 
+.main-body p {
+    margin: 0;
+    color:#40739e;
+    font-size: 18px;
+    font-weight: 400;
 }
 
 .main-body__login {
     display: flex;
     flex-direction: column;
+    position: relative;
+    width: 100%;
 }
 
 .main-body__login label {
@@ -43,4 +51,14 @@ body {
     outline: none;
     margin-bottom: 20px;
     height: 25px;
+    font-size: 16px;
+    padding-left:5px;
+}
+
+ion-icon {
+    position: absolute;
+    top: 101px;
+    left: 245px;
+    cursor: pointer;
+    color:#454545;
 }
