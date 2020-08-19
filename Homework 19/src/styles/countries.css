@@ -1,0 +1,51 @@
+/*Main*/
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+
+.main-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #101c27
+}
+
+.nav-logo {
+    margin-left: 10px;
+    padding: 10px;
+    width: 80px;
+}
+
+.main-nav h1 {
+    color: white;
+    font-size: 40px;
+    font-weight: 300;
+    padding: 10px;
+    text-align: center;
+}
+
+.main-nav_fav {
+    margin-right: 20px;
+    padding: 5px 10px;
+    color: #40739e;
+    border: none;
+    border-radius: 3px;
+    font-size: 26px ;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.main-nav_fav:hover {
+    border-radius: 3px;
+    border-bottom: 3px solid white;
+    transition: 0.2s;
+}
