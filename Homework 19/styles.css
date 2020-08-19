@@ -26,7 +26,7 @@ body {
     height: auto;
 }
 
-.main-body p {
+.main-body__text {
     margin: 0;
     color:#40739e;
     font-size: 18px;
@@ -53,6 +53,11 @@ body {
     height: 25px;
     font-size: 16px;
     padding-left:5px;
+}
+
+.login {
+    color: white;
+    text-decoration: none;
 }
 
 .ion-icon__eye {
@@ -86,7 +91,25 @@ body {
 .ion-icon1_close,
 .ion-icon2_close {
     display: none;
-    color: rgb(206, 3, 3);
+    color:red;
+}
+
+.error1,
+.error2 {
+    display: none;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    color: rgb(255, 0, 0);
+    font-size: 14px;
+}
+
+.error1 {
+    top: 53px;
+}
+
+.error2 {
+    top: 125px;
 }
 
 .visible {
