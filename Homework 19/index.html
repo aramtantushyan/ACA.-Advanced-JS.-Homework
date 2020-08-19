@@ -9,20 +9,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <!-- <img src="./src/img/main_logo.png" alt=""> -->
     <section class="main-body">
         <div class="main-body__login">
             <ion-icon class='ion-icon1_check' name="checkmark-outline"></ion-icon>
             <ion-icon class='ion-icon1_close' name="close-outline"></ion-icon>
             <label for="username">Username:</label>
-            <input type="text" id="username">
+            <input type="text" id="1">
+            <p class='error1'>Username must contain min 5 characters!</p>
             <ion-icon class='ion-icon2_check' name="checkmark-outline"></ion-icon>
             <ion-icon class='ion-icon2_close' name="close-outline"></ion-icon>
             <ion-icon class='ion-icon__eye' name="eye-outline"></ion-icon>                
             <label for="password">Password:</label>
-            <input type="password" id="password">
+            <input type="password" id="2">
+            <p class='error2'>Password must contain min 5 characters!</p>
         </div>
-        <p>Please enter your username and password.</p>
+        <p class="main-body__text">Please enter your username and password to <a class='login' href="">Log In</a>.</p>
     </section>
 <script src="index.js"></script>
 <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>    
