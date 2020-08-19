@@ -3,6 +3,7 @@ const username = document.getElementById('1');
 const password = document.getElementById('2');
 const errorText1 = document.querySelector('.error1');
 const loginBlock = document.querySelector('.main-body__login');
+const loginText = document.getElementById('login');
 
 function showHidePassword () {
     if (password.type === "password") {
@@ -34,18 +35,41 @@ function validateInput (target) {
 }
 
 function validateUsernamePassword () {
-    return (validateInput(username) && validateInput(password));
+    /**
+     Fn calls are assigned to variables in order to run the func.
+     for both inputs to make appropriate UI changes.
+     */ 
+    const usernameResult = validateInput(username);
+    const passwordResult = validateInput(password); 
+    return (usernameResult && passwordResult);
 }
 
-username.addEventListener('keyup', (e) => {validateInput(e.target)})
-password.addEventListener('keyup', (e) => {validateInput(e.target)})
+function navigateToNextPage () {
+    if(validateUsernamePassword()) {
+        // self.location = '';
+        console.log('1')
+    }
+    console.log('2')
+}
+
+username.addEventListener('keyup', (e) => {
+    if(e.key !== 'Enter') {
+        validateInput(e.target);
+    } else {
+        navigateToNextPage();
+    }
+});
+
+password.addEventListener('keyup', (e) => {
+    if(e.key !== 'Enter') {
+        validateInput(e.target);
+    } else {
+        navigateToNextPage();
+    }
+});
+
 username.addEventListener('blur', (e) => {validateInput(e.target)});
 password.addEventListener('blur', (e) => {validateInput(e.target)});
-loginBlock.addEventListener('keydown', (e) => {
-    if(e.key === 'return') {
-        if(validateUsernamePassword) {
-            
-        }
-    }
-})
+
+loginText.addEventListener('click', navigateToNextPage);
 eyeIcon.addEventListener('click', showHidePassword);
