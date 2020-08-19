@@ -3,7 +3,7 @@ const username = document.getElementById('1');
 const password = document.getElementById('2');
 const errorText1 = document.querySelector('.error1');
 const loginBlock = document.querySelector('.main-body__login');
-const loginText = document.getElementById('login');
+const loginText = document.querySelector('.main-body__login_btn');
 
 function showHidePassword () {
     if (password.type === "password") {
