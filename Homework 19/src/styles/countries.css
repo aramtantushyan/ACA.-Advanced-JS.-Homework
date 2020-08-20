@@ -13,6 +13,8 @@ body {
     align-items: center;
 }
 
+/*Navigation*/
+
 .nav {
     display: flex;
     flex-direction: row;
@@ -56,7 +58,7 @@ body {
 }
 
 .search {
-    padding: 0.8%;
+    padding: 0.3%;
     margin: 2% 30%;
     width: 40%;
     border: solid 1px #dfe1e58c;
@@ -97,4 +99,45 @@ body {
 
 .search:hover {
     box-shadow: 2px 2px 2px rgb(221, 210, 210);
+}
+
+/*Body*/
+
+.main-body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.country-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0.1px 0.1px 5px #40749e80;;
+    width: 14%;
+    padding: 1%;
+}
+
+.country-name {
+    margin-top: 0;
+    font-size: 25px;
+    font-weight: 400;
+    width: 95%;
+    color: #101c27;
+}
+
+.country-flag {
+    width: 95%;
+    height: 120px;
+}
+
+.country-info {
+    width: 95%;
+}
+
+.country-info__row {
+    font-size: 16px;
+    padding-bottom: 5px;
+    color: #101c27;
 }
