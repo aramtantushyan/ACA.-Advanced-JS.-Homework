@@ -46,10 +46,8 @@ function validateUsernamePassword () {
 
 function navigateToNextPage () {
     if(validateUsernamePassword()) {
-        // self.location = '';
-        console.log('1')
+        self.location = '../pages/countries.html';
     }
-    console.log('2')
 }
 
 username.addEventListener('keyup', (e) => {
