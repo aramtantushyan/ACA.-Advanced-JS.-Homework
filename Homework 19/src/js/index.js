@@ -46,7 +46,7 @@ function validateUsernamePassword () {
 
 function navigateToNextPage () {
     if(validateUsernamePassword()) {
-        self.location = '../pages/countries.html';
+        window.location.href = '/Homework 19/src/pages/countries.html';
     }
 }
 
