@@ -121,30 +121,44 @@ hr {
     flex-direction: column;
     align-items: center;
     box-shadow: 0.1px 0.1px 5px #40749e80;;
+    max-width: 215px;
     min-width: 215px;
     padding: 1%;
+    margin: 30px;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .country-name {
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
     margin-top: 0;
     font-size: 25px;
     font-weight: 400;
-    min-width: 95%;
+    max-width: 204px;
     color: #101c27;
 }
 
 .country-flag {
-    min-width: 95%;
+    min-width: 204px;
+    max-width: 204px;
     height: 120px;
+    margin-bottom: 10px;
 }
 
 .country-info {
     min-width: 95%;
+    border-collapse: collapse;
 }
 
 .country-info__row {
     font-size: 16px;
     padding-bottom: 5px;
     color: #101c27;
+}
+
+td {;
+    border-bottom: 1px solid  #101c27;
+    padding: 5px;
 }
