@@ -117,6 +117,7 @@ hr {
 }
 
 .country-card {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -125,7 +126,6 @@ hr {
     padding: 1%;
     margin: 30px;
     border-radius: 3px;
-    cursor: pointer;
 }
 
 .country-name {
@@ -161,4 +161,37 @@ hr {
 td {
     border-bottom: 1px solid  #101c27;
     padding: 5px;
+}
+
+.overlay {
+    position: absolute;
+    display: block;
+    width: 100%; 
+    height: 100%;
+    top: 0;
+    z-index: 2;
+    transition: 0.5s;
+}
+
+.overlay-icons {
+    height: 100%;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-icons ion-icon {
+    margin: 15px;
+    color: white;
+    cursor: pointer;
+}
+
+.country-card:hover .overlay-icons {
+    display: flex;
+}
+
+.country-card:hover .overlay {
+    /* display: block; */
+    background-color: #101c27d5; 
 }

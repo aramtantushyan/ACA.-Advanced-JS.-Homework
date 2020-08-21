@@ -1,6 +1,12 @@
 function createCountryCard (item) {
     const innerHTML = ` 
     <div class="country-card">
+    <div class="overlay">
+        <div class="overlay-icons">
+            <ion-icon size="large" name="open-outline" title="View details"></ion-icon>
+            <ion-icon size="large" name="star-outline" title="Add to favourites"></ion-icon>
+        </div>
+    </div>
         <p class="country-name">${item.name}</p>
         <img class='country-flag' src="${item.flag}" alt="country flag">
         <table class="country-info">
