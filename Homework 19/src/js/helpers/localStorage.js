@@ -5,3 +5,6 @@ function setToLocalStorage (key, value) {
 function getFromLocalStorage (key) {
     return JSON.parse(localStorage.getItem(key));
 }
+
+export {setToLocalStorage};
+export {getFromLocalStorage};
