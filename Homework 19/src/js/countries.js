@@ -1,7 +1,9 @@
-import {doGet} from './requestHelper/request.helper.js';
-import {renderCountryCards} from './renderHelper/render.helper.js';
+import {doGet} from './helpers/request.helper.js';
+import {renderCountryCards} from './helpers/render.helper.js';
 
 const mainBody = document.querySelector('.main-body');
+const viewCountry = document.querySelector('.view');
+const favIcon = document.querySelector('.fav');
 
 function createDataObj (el) {
     const obj = {};
@@ -16,8 +18,8 @@ function createDataObj (el) {
 async function getCountriesPreviewData () {
     try {
         const data = await doGet('https://restcountries.eu/rest/v2/all?fields=name;capital;flag;languages;currencies');
-        const filteredData = await data.map((element) => createDataObj(element));
-        renderCountryCards(mainBody, 'beforeend', filteredData);
+        const arrangedData = await data.map((element) => createDataObj(element));
+        renderCountryCards(mainBody, 'beforeend', arrangedData);
     } catch (error) {
         throw new Error (error.text);
     }
