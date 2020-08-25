@@ -200,3 +200,8 @@ td {
 .fav:hover {
     color:#40739e
 }
+
+.view:active,
+.fav:active {
+    color: white;
+}
