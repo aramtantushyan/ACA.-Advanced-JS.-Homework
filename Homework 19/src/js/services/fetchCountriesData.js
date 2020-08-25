@@ -15,24 +15,24 @@ async function request (countryName, localStorageKey) {
     try {
         const data = await doGet(`https://restcountries.eu/rest/v2/${countryName}?fields=name;capital;flag;languages;currencies`);
         const arrangedData = await data.map((element) => createDataObj(element));
-        setToLocalStorage(localStorageKey, arrangedData);   
+        await setToLocalStorage(localStorageKey, arrangedData);   
     } catch (error) {
         setToLocalStorage(localStorageKey, []);
         throw new Error (error);
     }
 }
 
-function getAllCountries () {
+function fetchAllCountries () {
     const searchFor = 'all';
     const localStorageKey = 'allCountries';
     request(searchFor, localStorageKey);
 }
 
-function getCountryByName (name) {
+function fetchCountryByName (name) {
     const searchFor = `name/${name}`;
     const localStorageKey = 'searchResults';
     request(searchFor, localStorageKey);
 }
 
-export {getAllCountries};
-export {getCountryByName};
+export {fetchAllCountries};
+export {fetchCountryByName};
