@@ -3,8 +3,8 @@ function createCountryCard (item) {
     <div class="country-card">
     <div class="overlay">
         <div class="overlay-icons">
-            <ion-icon class='view' size="large" name="open-outline" title="View details"></ion-icon>
-            <ion-icon class='fav' size="large" name="star-outline" title="Add to favourites"></ion-icon>
+            <ion-icon id='${item.name}' class='view' size="large" name="open-outline" title="View details"></ion-icon>
+            <ion-icon id='${item.name}' class='fav' size="large" name="star-outline" title="Add to favourites"></ion-icon>
         </div>
     </div>
         <p class="country-name">${item.name}</p>
