@@ -8,17 +8,21 @@ function createDataObj (el) {
     obj.flag = el.flag;
     obj.language = el.languages[0].name;
     obj.currency = el.currencies[0].code;
+    obj.region = el.region;
+    obj.population = el.population;
+    obj.area = el.area;
+    obj.borders = el.borders;
     return obj;
 }
 
 async function request (countryName, localStorageKey) {
     try {
-        const data = await doGet(`https://restcountries.eu/rest/v2/${countryName}?fields=name;
-        capital;flag;languages;currencies;region;population;area;borders`);
+        const data = await doGet(`https://restcountries.eu/rest/v2/${countryName}?fields=name;capital;flag;languages;currencies;region;area;population;borders`);
         const arrangedData = await data.map((element) => createDataObj(element));
-        await setToLocalStorage(localStorageKey, arrangedData);   
+        setToLocalStorage(localStorageKey, arrangedData);   
     } catch (error) {
         setToLocalStorage(localStorageKey, []);
+        console.log(error);
         throw new Error (error);
     }
 }
