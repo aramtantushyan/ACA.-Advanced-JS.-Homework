@@ -1,3 +1,5 @@
+import {redirectToOtherPage} from './helpers/redirect.helper.js'
+
 const eyeIcon = document.querySelector('.ion-icon__eye');
 const username = document.getElementById('1');
 const password = document.getElementById('2');
@@ -46,7 +48,7 @@ function validateUsernamePassword () {
 
 function navigateToNextPage () {
     if(validateUsernamePassword()) {
-        window.location.href = 'src/pages/countries.html';
+        redirectToOtherPage('src/pages/countries.html');
     }
 }
 
