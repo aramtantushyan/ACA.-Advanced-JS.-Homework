@@ -2,12 +2,17 @@ import {renderCountryCards} from './helpers/render.helper.js';
 import {debounce} from './helpers/debounce.helper.js';
 import {getFromLocalStorage} from './helpers/localStorage.js';
 import {setToLocalStorage} from './helpers/localStorage.js'
+import {redirectToOtherPage} from './helpers/redirect.helper.js'
 import {fetchAllCountries} from './services/fetchCountriesData.js';
 import {fetchCountryByName} from './services/fetchCountriesData.js';
+import {getCountryData} from './helpers/data.helper.js';
 
 const mainBody = document.querySelector('.main-body');
 const search = document.getElementById('search');
 const searchBtn = document.getElementById('searchBtn');
+const favourites = document.getElementById('favourite');
+const logout = document.getElementById('logout');
+
 
 let favIcon;
 let viewCountry;
@@ -29,7 +34,7 @@ function initPage () {
         }
         favIcon = document.querySelectorAll('.fav');
         viewCountry = document.querySelectorAll('.view');
-        favIcon.forEach((e) => {e.addEventListener('click', (event) => addToFavourites(event.target.id)), console.log(1) });
+        favIcon.forEach((e) => {e.addEventListener('click', (event) => addToFavourites(event.target.id)) });
         viewCountry.forEach((e) => {e.addEventListener('click', (event)=> console.log(event.target.id)) });
     } catch (error) {
         console.log(error);
@@ -48,15 +53,6 @@ function showSearchResults () {
     } else {
         renderCountryCards(mainBody, 'beforeend', searchResults);
         console.log(search.value);
-    }
-}
-
-function getCountryData (country) {
-    const allCountries = getFromLocalStorage('allCountries');
-    for (let elem of allCountries) {
-        if(elem.name === country) {
-            return elem;
-        }
     }
 }
 
@@ -80,3 +76,4 @@ initPage();
 
 search.addEventListener('keyup', debounce(showSearchResults, 200));
 searchBtn.addEventListener('click', debounce(showSearchResults, 200));
+logout.addEventListener('click', () => redirectToOtherPage('../../index.html'));
