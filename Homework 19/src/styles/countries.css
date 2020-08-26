@@ -121,7 +121,7 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0.1px 0.1px 5px #40749e80;;
+    box-shadow: 0.1px 0.1px 5px #40749e80;
     width: 190px;
     padding: 1%;
     margin: 30px;
