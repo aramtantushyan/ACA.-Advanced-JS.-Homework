@@ -13,7 +13,8 @@ function createDataObj (el) {
 
 async function request (countryName, localStorageKey) {
     try {
-        const data = await doGet(`https://restcountries.eu/rest/v2/${countryName}?fields=name;capital;flag;languages;currencies`);
+        const data = await doGet(`https://restcountries.eu/rest/v2/${countryName}?fields=name;
+        capital;flag;languages;currencies;region;population;area;borders`);
         const arrangedData = await data.map((element) => createDataObj(element));
         await setToLocalStorage(localStorageKey, arrangedData);   
     } catch (error) {

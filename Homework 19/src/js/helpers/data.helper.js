@@ -1,4 +1,5 @@
 import {setToLocalStorage} from './localStorage.js';
+import {getFromLocalStorage} from './localStorage.js'
 
 function setViewedCountryData (country) {
     const viewedCountry = getCountryData(country);

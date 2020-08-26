@@ -2,7 +2,7 @@ import {renderCountryCards} from './helpers/render.helper.js';
 import {debounce} from './helpers/debounce.helper.js';
 import {getFromLocalStorage} from './helpers/localStorage.js';
 import {setToLocalStorage} from './helpers/localStorage.js'
-import {redirectToOtherPage} from './helpers/redirect.helper.js'
+import {redirectToOtherPage, redirectToViewedCountry} from './helpers/redirect.helper.js'
 import {fetchAllCountries} from './services/fetchCountriesData.js';
 import {fetchCountryByName} from './services/fetchCountriesData.js';
 import {getCountryData} from './helpers/data.helper.js';
@@ -12,6 +12,7 @@ const search = document.getElementById('search');
 const searchBtn = document.getElementById('searchBtn');
 const favourites = document.getElementById('favourite');
 const logout = document.getElementById('logout');
+const footer = document.querySelector('.footer');
 
 
 let favIcon;
@@ -47,13 +48,19 @@ function showSearchResults () {
     console.log(searchResults);
     mainBody.innerHTML = '';
     if (searchResults && searchResults.length === 0) {
-        mainBody.insertAdjacentHTML('beforeend', '<h1>0 results match your search.</h1>');
+        mainBody.insertAdjacentHTML('beforeend', `<h1>No results for "${search.value}".</h1>`);
+        footer.classList.add('footerBottom');
     } else if (search.value.trim() === '') {
         initPage();
     } else {
         renderCountryCards(mainBody, 'beforeend', searchResults);
+        footer.classList.remove('footerBottom');
         console.log(search.value);
     }
+    favIcon = document.querySelectorAll('.fav');
+    viewCountry = document.querySelectorAll('.view');
+    favIcon.forEach((e) => {e.addEventListener('click', (event) => addToFavourites(event.target.id)) });
+    viewCountry.forEach((e) => {e.addEventListener('click', (event)=> console.log(event.target.id)) });
 }
 
 function addToFavourites (country) {
@@ -77,3 +84,4 @@ initPage();
 search.addEventListener('keyup', debounce(showSearchResults, 200));
 searchBtn.addEventListener('click', debounce(showSearchResults, 200));
 logout.addEventListener('click', () => redirectToOtherPage('../../index.html'));
+favourites.addEventListener('click', () => redirectToOtherPage('../pages/favourites.html'))
