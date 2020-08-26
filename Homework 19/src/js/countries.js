@@ -1,11 +1,10 @@
 import {renderCountryCards} from './helpers/render.helper.js';
 import {debounce} from './helpers/debounce.helper.js';
-import {getFromLocalStorage} from './helpers/localStorage.js';
-import {setToLocalStorage} from './helpers/localStorage.js'
+import {getFromLocalStorage, setToLocalStorage} from './helpers/localStorage.js';
 import {redirectToOtherPage, redirectToViewedCountry} from './helpers/redirect.helper.js'
-import {fetchAllCountries} from './services/fetchCountriesData.js';
-import {fetchCountryByName} from './services/fetchCountriesData.js';
-import {getCountryData} from './helpers/data.helper.js';
+import {fetchAllCountries, fetchCountryByName} from './services/fetchCountriesData.js';
+import {addToFavourites} from './helpers/favourites.helper.js';
+
 
 const mainBody = document.querySelector('.main-body');
 const search = document.getElementById('search');
@@ -36,7 +35,7 @@ function initPage () {
         favIcon = document.querySelectorAll('.fav');
         viewCountry = document.querySelectorAll('.view');
         favIcon.forEach((e) => {e.addEventListener('click', (event) => addToFavourites(event.target.id)) });
-        viewCountry.forEach((e) => {e.addEventListener('click', (event)=> console.log(event.target.id)) });
+        viewCountry.forEach((e) => {e.addEventListener('click', (event)=> redirectToViewedCountry(event.target.id)) });
     } catch (error) {
         console.log(error);
     }
@@ -60,24 +59,10 @@ function showSearchResults () {
     favIcon = document.querySelectorAll('.fav');
     viewCountry = document.querySelectorAll('.view');
     favIcon.forEach((e) => {e.addEventListener('click', (event) => addToFavourites(event.target.id)) });
-    viewCountry.forEach((e) => {e.addEventListener('click', (event)=> console.log(event.target.id)) });
+    viewCountry.forEach((e) => {e.addEventListener('click', (event)=> redirectToViewedCountry(event.target.id)) });
 }
 
-function addToFavourites (country) {
-    const favCountryData = getCountryData(country);
-    const favourites = getFromLocalStorage('favourites');
-    if (favourites) {
-        for (let elem of favourites) {
-            if(elem.name === country) {
-                return;
-            }
-        }
-        const newFavourites = [...favourites, favCountryData];
-        setToLocalStorage('favourites', newFavourites);
-    } else {
-        setToLocalStorage('favourites', [favCountryData]);
-    }
-}
+
 
 initPage();
 
