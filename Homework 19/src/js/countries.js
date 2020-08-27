@@ -59,7 +59,6 @@ function showSearchResults () {
             footer.classList.remove('footerBottom');
         }
     }
-    
     favIcon = document.querySelectorAll('.fav');
     viewCountry = document.querySelectorAll('.view');
     favIcon.forEach((e) => {e.addEventListener('click', (event) => addToFavourites(event.target.id)) });
