@@ -23,6 +23,7 @@ body {
 /*Main body*/
 
 .body-heading {
+    text-align: center;
     font-size: 100px;
     font-weight: 300;
     color: rgb(255, 255, 255);

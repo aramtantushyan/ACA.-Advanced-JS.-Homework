@@ -190,3 +190,40 @@ hr {
 ion-icon {
     color: #40739e;
 }
+
+/*Media queries*/
+
+@media only screen and (max-width: 814px) {
+    .nav-items {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 1122px) {
+    .country-card {
+      width: 80%;
+    }
+}
+
+@media only screen and (max-width: 690px) {
+    .footer {
+        position: relative ;
+    }
+
+    .country-card {
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 702px) {
+    .addFav {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .addFav {
+        font-size: 10px;
+    }
+}

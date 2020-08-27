@@ -48,6 +48,7 @@ body {
     border-radius: 3px;
     font-size: 23px ;
     font-weight: 300;
+    text-align: center;
     cursor: pointer;
 }
 
@@ -226,4 +227,18 @@ td {
     width: 100%;
     position: fixed;
     bottom: 0;
+}
+
+/*Media queries*/
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 814px) {
+    .nav-items {
+        display: flex;
+        flex-direction: column;
+    }
+    .search {
+        margin:2% 20%;
+        width: 60%
+    }
 }
