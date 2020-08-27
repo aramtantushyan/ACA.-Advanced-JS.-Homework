@@ -53,9 +53,13 @@ function showSearchResults () {
         initPage();
     } else {
         renderCountryCards(mainBody, 'beforeend', searchResults);
-        footer.classList.remove('footerBottom');
-        console.log(search.value);
+        if(searchResults.length < 5) {
+            footer.classList.add('footerBottom');
+        } else {
+            footer.classList.remove('footerBottom');
+        }
     }
+    
     favIcon = document.querySelectorAll('.fav');
     viewCountry = document.querySelectorAll('.view');
     favIcon.forEach((e) => {e.addEventListener('click', (event) => addToFavourites(event.target.id)) });
