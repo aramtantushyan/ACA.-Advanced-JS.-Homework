@@ -19,9 +19,9 @@ let viewCountry;
 
 function initPage () {
     try {
-        footer.classList.remove('footerBottom');
         let allCountriesData = getFromLocalStorage('allCountries');
         if (allCountriesData && allCountriesData.length !== 0) {
+            footer.classList.remove('footerBottom');
             mainBody.innerHTML = '';
             renderCountryCards(mainBody, 'beforeend', allCountriesData);
         } else {
